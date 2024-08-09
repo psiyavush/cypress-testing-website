@@ -16,7 +16,7 @@
 	<title>Cypress Testing Website</title>
 	<meta name="description" content="A site for learning automated testing with the web application testing tool, Cypress.">
 	<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
-	<link rel="canonical" href="/" />
+	<link rel="canonical" href="https://cypress-testing-website.vercel.app/" />
 </svelte:head>
 
 <div class="home-page">
