@@ -1,6 +1,4 @@
-.DS_Store
-/node_modules
-/build
-/.netlify
-/.svelte-kit
-/.vercel
+node_modules
+dist
+dist-ssr
+*.local
