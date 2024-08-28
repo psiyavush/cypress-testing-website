@@ -75,7 +75,7 @@ const Register = () => {
                             onChange={handleChange}
                             inputProps={{
                                 maxLength: 20,
-                                'ng-model':"$ctrl.formData.username"
+                                'ng-model':"$ctrl.formData.username"                         
                             }}
                             />
                         </Grid>
@@ -90,6 +90,7 @@ const Register = () => {
                             onChange={handleChange}
                             inputProps={{
                                 maxLength: 50, 
+                                'ng-model':"$ctrl.formData.email"
                               }}
                             />
                         </Grid>
@@ -103,6 +104,9 @@ const Register = () => {
                             id="password"
                             autoComplete="new-password"
                             onChange={handleChange}
+                            inputProps={{
+                                'ng-model':"$ctrl.formData.password"
+                            }}
                             />
                         </Grid>
                         </Grid>
