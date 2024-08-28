@@ -1,8 +1,6 @@
-import { createBrowserRouter } from "react-router-dom";
-import { React } from "react";
+import { createHashRouter } from "react-router-dom";
 
-import { Navigate } from "react-router-dom";
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     lazy: async () => {
