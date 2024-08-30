@@ -60,6 +60,7 @@ const Login = () => {
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <Box
+            className="auth-page"
             sx={{
               marginTop: 8,
               display: 'flex',
@@ -84,6 +85,7 @@ const Login = () => {
                 onChange={handleChange}
                 inputProps={{
                   maxLength: 50, 
+                  'ng-model':"$ctrl.formData.email"
                 }}
               />
               <TextField
@@ -96,6 +98,9 @@ const Login = () => {
                 id="password"
                 autoComplete="current-password"
                 onChange={handleChange}
+                inputProps={{
+                  'ng-model':"$ctrl.formData.password"
+                }}
               />
               <Button
                 type="submit"
