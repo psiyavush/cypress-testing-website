@@ -69,10 +69,11 @@ function SettingsPage() {
     }
   }, [redirectUrl, navigate, dispatch]);
   return (
-    <Container maxWidth="md" sx={{ mt: 5 }} style={{ marginBottom: "100px" }}>
+    <Container maxWidth="md" sx={{ mt: 5 }} style={{ marginBottom: "100px" }} className="settings-page">
       <Card>
         <CardContent>
-          <Typography variant="h4" align="center" gutterBottom sx={{ mb: 5 }}>
+          
+          <Typography component="h1" variant="h4" align="center" gutterBottom sx={{ mb: 5 }}>
             Your Settings
           </Typography>
 
@@ -149,7 +150,13 @@ function SettingsPage() {
 
           <Divider style={{ margin: "16px 0" }} />
 
-          <Button variant="outlined" color="error" onClick={handleLogout}>
+          <Button 
+            variant="outlined"
+            color="error"
+            onClick={handleLogout} 
+            data-cy="logout"
+            ng-click="logout"
+          >
             Or click here to logout.
           </Button>
         </CardContent>
