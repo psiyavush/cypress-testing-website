@@ -61,7 +61,7 @@ const Header = () => {
                 {isLoggedIn ? (
                   <>
                     <NavLink
-                      to="/new-article"
+                      to="/editor"
                       className={`${styles.linkItem} my-auto`}
                       onClick={handleNavLinkClick}
                     >

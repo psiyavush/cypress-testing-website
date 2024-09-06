@@ -52,14 +52,14 @@ function ArticleDetail(props) {
   // }
   return (
     <>
-      <div className={styles.articleDetailContainer}>
+      <div className={`${styles.articleDetailContainer} article-page`} >
         <Container fluid className="bg-dark text-white">
           <Container>
             <Row>
               <Col xs={12} className={styles.articlDetaileHeader}>
-                <h2 className="text-uppercase fs-1 fw-bold">
+                <h1 className="text-uppercase fs-1 fw-bold">
                   {article?.title || <Skeleton />}
-                </h2>
+                </h1>
                 <Row>
                   <Col className="" xs={12}>
                     <Row className="p-2">
@@ -152,10 +152,12 @@ function ArticleDetail(props) {
         </Container>
         <Container xs={9} sm={12} className={styles.detailArticleContent}>
           <Row>
-            <Row>
+            <Row
+              ng-bind-html="$ctrl.article.body"
+            >
               <p>{article?.body ? article?.body : <Skeleton count={10} />}</p>
               <Row>
-                <div className={styles.tagList}>
+                <div className={`${styles.tagList} tag-list`}>
                   {article?.tagList.map((tag, index) => (
                     <span key={index} className={styles.tags}>
                       {tag}

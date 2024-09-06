@@ -71,7 +71,7 @@ const router = createHashRouter([
       },
 
       {
-        path: "new-article",
+        path: "editor",
         lazy: async () => {
           const CreateArticle = await import(
             "../components/CreateArticle/CreateArticle"
@@ -103,7 +103,7 @@ const router = createHashRouter([
       },
 
       {
-        path: "new-article/:slug",
+        path: "editor/:slug",
         lazy: async () => {
           const CreateArticle = await import(
             "../components/CreateArticle/CreateArticle"

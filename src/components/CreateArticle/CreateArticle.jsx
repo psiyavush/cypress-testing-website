@@ -116,7 +116,7 @@ useEffect(() => {
   return (
     <Container className={styles.createArticleContainer}>
       <Card sx={{ mt: 5 }}>
-        <CardContent>
+        <CardContent className="editor-page">
           <Typography variant="h4" align="center" gutterBottom>
             {slug ? "Edit Article" : "Create Article"}
           </Typography>
@@ -133,6 +133,7 @@ useEffect(() => {
                   onChange={handleInput}
                   inputProps={{
                     maxLength: 100, 
+                    'ng-model':"title"
                   }}
                 />
               </Grid>
@@ -147,6 +148,7 @@ useEffect(() => {
                   onChange={handleInput}
                   inputProps={{
                     maxLength: 150, 
+                    'ng-model':"description"
                   }}
                 />
               </Grid>
@@ -162,6 +164,7 @@ useEffect(() => {
                   onChange={handleInput}
                   inputProps={{
                     maxLength: 500, 
+                    'ng-model':"body"
                   }}
                 />
               </Grid>
@@ -171,6 +174,9 @@ useEffect(() => {
                   label="Enter tags"
                   value={tag}
                   name="tagList"
+                  inputProps={{
+                    'ng-model':"tagField"
+                  }}
                   onChange={(e) => setTag(e.target.value)}
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
