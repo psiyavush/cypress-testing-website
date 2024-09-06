@@ -82,10 +82,10 @@ function ArticleDetail(props) {
                             )}
                           </Col>
                           <Col className={styles.authorDateName}>
-                            <div className={styles.authorName} cy-data="username">
+                            <div className={styles.authorName}>
                               {article?.author.username || <Skeleton />}
                             </div>
-                            <p className={styles.date} data-cy="date">
+                            <p className={styles.date}>
                               {article?.createdAt ? (
                                 new Date(article?.createdAt).toLocaleDateString(
                                   "en-US",
@@ -190,10 +190,10 @@ function ArticleDetail(props) {
                       handleProfileClick(article?.author?.username)
                     }
                   >
-                    <div className={styles.authorName2}{...{ 'data-cy': 'username' }}>
+                    <div className={styles.authorName2} data-cy="username">
                       {article?.author.username}
                     </div>
-                    <p className={styles.date} {...{ 'data-cy': 'date' }}>
+                    <p className={styles.date} data-cy="date">
                       {article?.createdAt
                         ? new Date(article?.createdAt).toLocaleDateString(
                             "en-US",
