@@ -54,9 +54,9 @@ const Profile = () => {
       </Row>
       <Container>
         <Row className="justify-content-center">
-          <Col md={9} className="mt-3">
-            <Nav variant="tabs" defaultActiveKey="MyArticles">
-              <Nav.Item>
+          <Col md={9} className="mt-3 articles-toggle">
+            <Nav variant="tabs" defaultActiveKey="MyArticles" as="ul">
+              <Nav.Item as="li">
                 <Nav.Link
                   eventKey="MyArticles"
                   onClick={() => handleTabChange("MyArticles")}
@@ -64,7 +64,7 @@ const Profile = () => {
                   My article
                 </Nav.Link>
               </Nav.Item>
-              <Nav.Item>
+              <Nav.Item as="li">
                 <Nav.Link
                   eventKey="Favorited"
                   onClick={() => handleTabChange("Favorited")}

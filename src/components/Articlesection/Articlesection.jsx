@@ -51,7 +51,7 @@ function Articlesection(props) {
 
   return (
     <>
-      <Container className={styles.articleSectionContainer}>
+      <Container className={styles.articleSectionContainer} as="article-list">
         <Col md={12}>
           {articles.map((article) => (
             <div key={article.slug}>
@@ -100,7 +100,7 @@ function Articlesection(props) {
                   <div className={styles.contentArticle}>
                     <Link
                       to={`../articles/${article.slug}`}
-                      className={styles.text}
+                      className={`${styles.text} preview-link`}
                     >
 
                      { <h3 className={styles.articleTitle}

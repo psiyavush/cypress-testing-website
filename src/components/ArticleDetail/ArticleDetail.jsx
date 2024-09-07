@@ -104,7 +104,7 @@ function ArticleDetail(props) {
                       </Col>
                       {isEdited ? (
                         <Col
-                          className={`${styles.buttonGroup} my-auto px-0 d-flex gap-3`}
+                          className={`${styles.buttonGroup} my-auto px-0 d-flex gap-3 article-actions`}
                         >
                           <button
                             onClick={handleEdit}
@@ -120,7 +120,7 @@ function ArticleDetail(props) {
                           </button>
                           <button
                             onClick={handleDelete}
-                            className={`${styles.button} btn btn-outline-danger`}
+                            className={`${styles.button} btn btn-outline-danger`} data-cy="delete"
                           >
                             <span>
                               <DeleteIcon
