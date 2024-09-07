@@ -51,10 +51,10 @@ function Articlesection(props) {
 
   return (
     <>
-      <Container className={styles.articleSectionContainer} as="article-list">
-        <Col md={12}>
+      <Container className={styles.articleSectionContainer}>
+        <Col md={12} as="article-list">
           {articles.map((article) => (
-            <div key={article.slug}>
+            <React.Fragment key={article.slug}>
               <Row className="article-preview border-bottom p-4">
                 <Row className={styles.authorInfo}>
                   <Row>
@@ -131,7 +131,7 @@ function Articlesection(props) {
                   </div>
                 </Row>
               </Row>
-            </div>
+            </React.Fragment>
           ))}
         </Col>
         {totalPages > 1 ? (
