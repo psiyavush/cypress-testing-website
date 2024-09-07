@@ -55,7 +55,7 @@ function Articlesection(props) {
         <Col md={12} as="article-list">
           {articles.map((article) => (
             <React.Fragment key={article.slug}>
-              <Row className="article-preview border-bottom p-4">
+              <Row className="article-preview border-bottom p-4" as="article-preview">
                 <Row className={styles.authorInfo}>
                   <Row>
                     <Col sm={6} md={6}>
