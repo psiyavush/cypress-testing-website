@@ -168,7 +168,7 @@ useEffect(() => {
                   }}
                 />
               </Grid>
-              <Grid item xs={12}>
+              <Grid item xs={12} className="tag-list">
                 <TextField
                   type="text"
                   label="Enter tags"
@@ -187,10 +187,11 @@ useEffect(() => {
                   placeholder="Write your Tag then press enter to add"
                 />
                 {input.tagList.map((tag, index) => (
-                  <p key={index} className={styles.tagList}>
+                  <p key={index} className={`${styles.tagList} tag-default`}>
                     <span
                       onClick={() => handleRemoveTag(index)}
                       className={styles.iconRemoveTag}
+                      ng-click="tag-remove"
                     >
                       {" "}
                       <ClearIcon fontSize="small" />
