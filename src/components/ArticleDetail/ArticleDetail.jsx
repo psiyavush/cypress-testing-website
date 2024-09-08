@@ -108,7 +108,7 @@ function ArticleDetail(props) {
                         >
                           <button
                             onClick={handleEdit}
-                            className={`${styles.button} btn btn-outline-success`}
+                            className={`${styles.button} btn btn-outline-success`} data-cy="edit"
                           >
                             <span>
                               <EditIcon
