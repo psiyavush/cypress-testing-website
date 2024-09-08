@@ -38,7 +38,7 @@ function ArticleDetail(props) {
   const authorToRender = useSelector((state) => state.auth?.profile);
   
   const handleEdit = () => {
-    navigate(`/new-article/${slug}`);
+    navigate(`/editor/${slug}`);
   };
   const handleDelete = () => {
     dispatch(deleteArticles(slug));
