@@ -10,6 +10,7 @@ import styles from "./styles.module.css";
 import SettingsIcon from "@mui/icons-material/Settings";
 import ArticleIcon from "@mui/icons-material/Article";
 import HomeIcon from "@mui/icons-material/Home";
+import { defaultAvatar } from "../../Store/actions/auth.action";
 
 const Header = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -53,9 +54,9 @@ const Header = () => {
                   className={`${styles.linkItem} my-auto`}
                   onClick={handleNavLinkClick}
                 >
-                  <span>
+                  {/* <span>
                     <HomeIcon className={styles.icon} fontSize="small" />
-                  </span>
+                  </span> */}
                   Home
                 </NavLink>
                 {isLoggedIn ? (
@@ -89,7 +90,7 @@ const Header = () => {
                       onClick={handleNavLinkClick}
                     >
                       <img
-                        src={user.image}
+                        src={user.avatar || defaultAvatar}
                         alt="avatar"
                         className={styles.avatar}
                       />

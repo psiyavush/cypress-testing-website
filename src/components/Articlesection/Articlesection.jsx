@@ -8,6 +8,7 @@ import { fetchArticlesByType } from "../../Store/actions/articles.action";
 import Like from "../Like and Follow/Like";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import { defaultAvatar } from "../../Store/actions/auth.action";
 function Articlesection(props) {
   const profile = useSelector((state) => state.auth.profile);
   const user = profile.username;
@@ -62,7 +63,7 @@ function Articlesection(props) {
                       <Row className="d-flex">
                         <Col xs={1} className="my-auto">
                           <img
-                            src={article?.author?.image}
+                            src={article?.author?.image || defaultAvatar}
                             className={styles.avatar}
                             alt="avatar"
                           />

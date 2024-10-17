@@ -1,10 +1,10 @@
 import axios from "axios";
 
 export const conduitAxios = axios.create({
-  baseURL: "https://api.realworld.io/api/",
+  baseURL: "https://conduit-realworld-example-app.fly.dev/api/",
 });
 export const conduitAxiosCredentials = axios.create({
-  baseURL: "https://api.realworld.io/api/",
+  baseURL: "https://conduit-realworld-example-app.fly.dev/api/",
 });
 conduitAxiosCredentials.interceptors.request.use(
   function (config) {

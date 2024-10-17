@@ -17,8 +17,9 @@ import EditIcon from "@mui/icons-material/Edit";
 import Follow from "../Like and Follow/Follow";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import { getProfile } from "../../Store/actions/auth.action";
+import { getProfile, defaultAvatar } from "../../Store/actions/auth.action";
 import Like from "../Like and Follow/Like";
+import ReactMarkdown from 'react-markdown';
 function ArticleDetail(props) {
   const { slug } = useParams();
   const dispatch = useDispatch();
@@ -71,15 +72,11 @@ function ArticleDetail(props) {
                           }
                         >
                           <Col xs={1} className="my-auto">
-                            {article?.author?.image ? (
                               <img
-                                src={article?.author?.image}
-                                className={styles.avatar}
-                                alt="avatar"
+                                  src={article?.author?.image || defaultAvatar}
+                                  className={styles.avatar}
+                                  alt="avatar"
                               />
-                            ) : (
-                              <Skeleton circle />
-                            )}
                           </Col>
                           <Col className={styles.authorDateName}>
                             <div className={styles.authorName}>
@@ -151,38 +148,37 @@ function ArticleDetail(props) {
           </Container>
         </Container>
         <Container xs={9} sm={12} className={styles.detailArticleContent}>
-          <Row>
-            <Row
-              ng-bind-html="$ctrl.article.body"
-            >
-              <p>{article?.body ? article?.body : <Skeleton count={10} />}</p>
-              <Row>
-                <div className={`${styles.tagList} tag-list`}>
-                  {article?.tagList.map((tag, index) => (
-                    <span key={index} className={styles.tags}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </Row>
-            </Row>
-          </Row>
-        </Container>
+  <Row>
+    <Row ng-bind-html="$ctrl.article.body">
+      {article?.body ? (
+        <ReactMarkdown>{article.body}</ReactMarkdown>
+      ) : (
+        <Skeleton count={10} />
+      )}
+    </Row>
+    <Row>
+      <div className={`${styles.tagList} tag-list`}>
+        {article?.tagList.map((tag, index) => (
+          <span key={index} className={styles.tags}>
+            {tag}
+          </span>
+        ))}
+      </div>
+    </Row>
+  </Row>
+</Container>
+
         <Row>
           <Col className=" d-flex py-5 justify-content-center mx-auto" xs={8}>
             <Row>
               <Col xs={12} md={4}>
                 <Row className="d-flex">
                   <Col xs={1} className="my-auto">
-                    {article?.author.image ? (
                       <img
-                        src={article?.author.image}
-                        className={styles.avatar}
-                        alt="avatar"
+                          src={article?.author?.image || defaultAvatar}
+                          className={styles.avatar}
+                          alt="avatar"
                       />
-                    ) : (
-                      <Skeleton />
-                    )}
                   </Col>
                   <Col
                     className={styles.authorDateName2}

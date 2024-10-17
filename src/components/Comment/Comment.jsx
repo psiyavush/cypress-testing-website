@@ -14,6 +14,7 @@ import Row from "react-bootstrap/Row";
 import { Card } from "react-bootstrap";
 import DeleteIcon from "@mui/icons-material/Delete";
 import styles from "./styles.module.css";
+import { defaultAvatar } from "../../Store/actions/auth.action";
 
 function Comment(props) {
   const slug = useParams();
@@ -51,7 +52,7 @@ function Comment(props) {
               style={{ width: "100%", marginLeft: "0px" }}
             >
               <Col>
-                <img src={user.image} alt="" className={styles.avatar} />
+                <img src={user.image || defaultAvatar} alt="" className={styles.avatar} />
               </Col>
               <Col className="d-flex justify-content-end">
                 <Button
@@ -84,7 +85,7 @@ function Comment(props) {
                         to={`/profile/${comment.author?.username}`}
                       >
                         <img
-                          src={user.image}
+                          src={user.image || defaultAvatar}
                           alt="avatar"
                           className={styles.avatar}
                         />
