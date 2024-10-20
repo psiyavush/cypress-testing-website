@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Col, Container, Nav, Row } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
 import styles from "../Home/styles.module.css";
 import { fetchArticlesByType } from "../../Store/actions/articles.action";
 import Like from "../Like and Follow/Like";
@@ -22,7 +21,7 @@ function Articlesection(props) {
   const tag = useSelector((state) => state.articles.currentTag);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const articlesPerPage = 10;
+  const articlesPerPage = 6;
   const totalPages = Math.ceil(articlesCount / articlesPerPage);
   let offset = (currentPage - 1) * articlesPerPage;
   const dispatch = useDispatch();
@@ -140,35 +139,43 @@ function Articlesection(props) {
             <ul className={`pagination ${styles.pagin}`}>
               <li
                 className={`page-item ${currentPage === 1 ? "disabled" : ""}`}
-                onClick={() => setCurrentPage(currentPage - 1)}
+                onClick={() => {
+                  if (currentPage > 1) {
+                    setCurrentPage(currentPage - 1);
+                  }
+                }}
               >
                 <button className="page-link">Previous</button>
               </li>
               {/* Render page numbers */}
-              {Array.from({ length: totalPages }, (_, index) => {
+              {Array.from({ length: Math.ceil(articlesCount / articlesPerPage) }, (_, index) => {
+                const isLastPage = index + 1 === Math.ceil(totalPages / articlesPerPage) + 1;
+
                 if (
                   index + 1 === 1 ||
                   index + 1 === currentPage ||
                   index + 1 === currentPage - 1 ||
                   index + 1 === currentPage + 1 ||
-                  index + 1 === totalPages
+                  index + 1 === Math.ceil(totalPages / articlesPerPage)
+                  
                 ) {
                   // Render current, adjacent, first, and last page numbers
                   return (
                     <li
                       key={index + 1}
-                      className={`page-item ${
-                        currentPage === index + 1 ? "active" : ""
-                      }`}
-                      onClick={() => setCurrentPage(index + 1)}
+                      className={`page-item ${currentPage === index + 1 ? "active" : ""}`}
+                      onClick={() => {
+                        if (!isLastPage) { // Только переключаем страницу, если это не последняя
+                          setCurrentPage(index + 1);
+                        }
+                      }}
                     >
                       <button className="page-link">{index + 1}</button>
                     </li>
                   );
                 } else if (
                   (index + 1 === currentPage - 2 && currentPage > 3) ||
-                  (index + 1 === currentPage + 2 &&
-                    currentPage < totalPages - 2)
+                  (index + 1 === currentPage + 2 && currentPage < Math.ceil(totalPages / articlesPerPage))
                 ) {
                   // Render ellipsis before and after the current page
                   return (
@@ -176,14 +183,16 @@ function Articlesection(props) {
                       <button className="page-link">...</button>
                     </li>
                   );
-                }
+                } 
                 return null;
               })}
               <li
-                className={`page-item ${
-                  currentPage === totalPages ? "disabled" : ""
-                }`}
-                onClick={() => setCurrentPage(currentPage + 1)}
+                className={`page-item ${currentPage === Math.ceil(totalPages / articlesPerPage) ? "disabled" : ""}`}
+                onClick={() => {
+                  if (currentPage < Math.ceil(totalPages / articlesPerPage)) {
+                    setCurrentPage(currentPage + 1);
+                  }
+                }}
               >
                 <button className="page-link">Next</button>
               </li>

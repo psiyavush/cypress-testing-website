@@ -19,3 +19,22 @@
 .tagsComponent{
     margin-top: 1.5rem;
 }
+.pagination{
+    display: flex;
+    justify-content: space-between; /* Распределяет пространство между элементами */
+    align-items: center; /* Выравнивает элементы по центру по вертикали */
+    margin-top: 1rem; /* Отступ сверху, можно настроить */
+}
+
+.pageInfo {
+    flex: 1; /* Занимает оставшееся пространство */
+    text-align: center; /* Центрирует текст информации о странице */
+  }
+
+.tagButton{
+    color: var(--bs-body-color);
+    cursor: pointer;
+    text-transform: none;
+    border-radius: 20px;
+    padding: 5px;
+}
