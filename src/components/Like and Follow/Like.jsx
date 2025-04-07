@@ -33,9 +33,9 @@ function Like({ article }) {
   };
   
   return (
-    <button
+    <button 
       onClick={() => handleLike(article)}
-      className={`${article?.favorited ? "btn btn-success" : "btn  btn-light"}`}
+      className={`${article?.favorited ? "btn btn-success favorite-btn" : "btn  btn-light favorite-btn"}`}
     >
       <span>
         <FavoriteIcon />

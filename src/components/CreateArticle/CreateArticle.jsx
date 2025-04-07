@@ -70,16 +70,17 @@ useEffect(() => {
       [name]: value,
     }));
   };
-
+  console.log(article)
   const handleSubmit = (event) => {
     event.preventDefault();
     if (slug) {
       const updatedArticle = {
-        ...article,
+        slug,
         title: input.title,
         description: input.description,
         body: input.body,
-        tagList: input.tagList,
+        // tagList,
+        // tagList: input.tagList,
       };
       dispatch(updateArticle(updatedArticle));
     } else {

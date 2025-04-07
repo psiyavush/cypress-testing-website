@@ -34,15 +34,15 @@ function Tag(props) {
   const totalPages = Math.ceil(tags.length / tagsPerPage);
 
   return (
-    <Col md={3} sm={12} className={`${styles.tagsComponent} tagsComponent`}>
+    <Col md={3} sm={12} className={`${styles.tagsComponent} tagsComponent sidebar`}>
       <h5 className={styles.popularTags}>Tags</h5>
-      <div className={styles.tagWrapper}>
+      <div className={`${styles.tagWrapper} tag-list`}>
         {currentTags.length > 0 ? (
           currentTags.map((tag) => (
             <div
               key={tag}
               onClick={() => handleTagChange(tag)}
-              className={styles.tag}
+              className={`${styles.tag} tag-default`}
             >
               {tag}
             </div>

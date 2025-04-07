@@ -56,27 +56,27 @@ function Articlesection(props) {
           {articles.map((article) => (
             <React.Fragment key={article.slug}>
               <Row className="article-preview border-bottom p-4" as="article-preview">
-                <Row className={styles.authorInfo}>
-                  <Row>
+              <Row className={styles.authorInfo}>
+                  <Row className="article-meta">
                     <Col sm={6} md={6}>
                       <Row className="d-flex">
                         <Col xs={1} className="my-auto">
-                          <img
-                            src={article?.author?.image || defaultAvatar}
-                            className={styles.avatar}
-                            alt="avatar"
-                          />
+                        <a href={`/profile/${article?.author?.username}`}>
+                            <img
+                              src={article?.author?.image || defaultAvatar}
+                              className={styles.avatar}
+                              alt="avatar"
+                            />
+                          </a>
                         </Col>
                         <Col className={styles.authorDateName}>
                           <div
-                            className={styles.authorName}
-                            onClick={() =>
-                              handleProfileClick(article.author?.username)
-                            }
+                            className={`${styles.authorName} author`}
+                            onClick={() => handleProfileClick(article.author?.username)}
                           >
                             {article?.author?.username}
                           </div>
-                          <p className={styles.date}>
+                          <p className={`${styles.date} date`}>
                             {article?.createdAt
                               ? new Date(article?.createdAt).toLocaleDateString(
                                   "en-US",
@@ -112,16 +112,16 @@ function Articlesection(props) {
                         {article.title}
                         </h3> */}
 
-                      <p className={styles.articleDescription}>
+                      <p className={styles.articleDescription} ng-bind="description">
                         {article?.description?.length > 70
                           ? article.description.slice(0, 70) + "..."
                           : article.description}
                       </p>
                       <div className={styles.articleFooter}>
                         <span className={styles.readMore}>Read more...</span>
-                        <div className={styles.tagList}>
+                        <div className={`${styles.tagList} tag-list`}>
                           {article?.tagList.map((tag, index) => (
-                            <span key={index} className={styles.tags}>
+                            <span key={index} className={`${styles.tags} tag-default`}>
                               {tag}
                             </span>
                           ))}
