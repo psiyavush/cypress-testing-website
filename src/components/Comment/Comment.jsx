@@ -38,7 +38,7 @@ function Comment(props) {
     <div>
       <Row>
         <Col xs={9} md={6} className="mx-auto">
-          <Form className="card bg-light">
+          <Form className="card bg-light comment-form">
             <Form.Control
               className="p-3"
               placeholder="Write a comment..."
@@ -46,6 +46,7 @@ function Comment(props) {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               aria-label="With textarea"
+              ng-model="body"
             />
             <Row
               className="p-3 d-flex align-item-center  card-footer"
