@@ -1,20 +1,31 @@
+# Conduit - Website for Testing with Cypress
 
-> ### Это код сайта который предназначен для обучения автоматизированному тестированию инструментом для тестирования веб-приложений - Cypress 
+>This project is a clone of the Conduit website (a blogging platform, a clone of Medium.com).
+The Conduit project is specifically built to demonstrate Cypress automation test code.
 
-### [Demo](https://cypress-testing-website.vercel.app/)&nbsp;&nbsp;&nbsp;&nbsp;[RealWorld](https://github.com/gothinkster/realworld)&nbsp;&nbsp;&nbsp;&nbsp;[Cypress Open Tutorials](https://github.com/open-tutorials/cypress)
+---
 
-Более подробную информацию о том, как это работает с другими фронтендами/бэкендами, можно найти в репозитории [RealWorld](https://github.com/gothinkster/realworld)
+>  Этот проект сделан как клон сайта Conduit (блог-платформа, клон Medium.com)
+Проект Conduit собран специально для демонстрации кода автотестов на Cypress
 
-Материалы по автотестам Cypress, можно найти в репозитории  [Cypress Open Tutorials](https://github.com/gothinkster/realworld)
+### [Demo](https://cypress-testing-website.vercel.app/)
 
-## Для локальной разработки
+* My Cypress automation test code is available in a separate repository [here](https://github.com/psiyavush/cypress-autotests-for-conduit?tab=readme-ov-file)
+* This site can also be used for following a series of tutorials in the project [Cypress Open Tutorials](https://github.com/open-tutorials/cypress)
+
+---
+
+* Мой проект кода автотестов на Cypress находится в отдельном репозитории [здесь](https://github.com/psiyavush/cypress-autotests-for-conduit?tab=readme-ov-file)
+* Так же этот сайт можно использовать, для прохождении серии туториалов по проекту [Cypress Open Tutorials](https://github.com/open-tutorials/cypress)
+
+## For local development
 
 ```bash
 npm install
 npm run dev
 ```
 
-Для сборки и запуска в режиме prod:
+## For building and running in prod mode
 
 ```bash
 npm run build
