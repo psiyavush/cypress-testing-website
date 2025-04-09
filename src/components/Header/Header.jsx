@@ -125,9 +125,9 @@ const Header = () => {
       <footer className={`fixed-bottom ${styles.footer}`}>
         <a
           style={{ textDecoration: "none" }}
-          href="https://github.com/psiyavush"
+          href="https://github.com/psiyavush/cypress-testing-website"
         >
-          My Github
+          Fork on Github
         </a>
       </footer>
     </>
