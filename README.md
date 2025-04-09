@@ -1,12 +1,12 @@
 # Conduit - Website for Testing with Cypress
 
->This project is a clone of the Conduit website (a blogging platform, a clone of Medium.com).
-The Conduit project is specifically built to demonstrate Cypress automation test code.
+> This project is a clone of the Conduit website (a blogging platform, a clone of Medium.com).
+> The Conduit project is specifically built to demonstrate Cypress automation test code.
 
 ---
 
->  Этот проект сделан как клон сайта Conduit (блог-платформа, клон Medium.com)
-Проект Conduit собран специально для демонстрации кода автотестов на Cypress
+> Этот проект сделан как клон сайта Conduit (блог-платформа, клон Medium.com).
+> Проект Conduit собран специально для демонстрации кода автотестов на Cypress
 
 ### [Demo](https://cypress-testing-website.vercel.app/)
 
