@@ -30,7 +30,7 @@ const Header = () => {
     <>
       <Navbar expand="md" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="/" className={styles.logoBar}>Conduit</Navbar.Brand>
+          <Navbar.Brand href="/" className={styles.logoBar}>QA COMPASS · Cypress Lab</Navbar.Brand>
           <Navbar.Toggle
             aria-controls={`offcanvasNavbar-expand-md`}
             onClick={() => setShowOffcanvas(!showOffcanvas)}
@@ -123,13 +123,16 @@ const Header = () => {
 
       <Outlet />
       <footer className={`fixed-bottom ${styles.footer}`}>
-        <a
-          style={{ textDecoration: "none" }}
-          href="https://github.com/psiyavush/cypress-testing-website"
-        >
-          Fork on Github
-        </a>
+        <div className={styles.footerLinks}>
+          <a className={styles.footerLink} href="https://github.com/psiyavush/cypress-testing-website" target="_blank" rel="noreferrer">⭐ Fork</a>
+          <a className={styles.footerLink} href="https://www.youtube.com/@QA-COMPASS" target="_blank" rel="noreferrer">▶ YouTube</a>
+          <a className={styles.footerLink} href="https://rutube.ru/u/qa/" target="_blank" rel="noreferrer">📺 RuTube</a>
+          <a className={styles.footerLink} href="https://vk.com/qa_compass" target="_blank" rel="noreferrer">💬 VK</a>
+          <a className={styles.footerLink} href="https://stepik.org/users/638160669/" target="_blank" rel="noreferrer">🎓 Stepik Courses</a>
+        </div>
       </footer>
+
+
     </>
   );
 };

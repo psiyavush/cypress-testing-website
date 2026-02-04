@@ -21,7 +21,7 @@ const Home = () => {
     logoFont: {
       fontFamily: 'titillium web,sans-serif'
     },
-    subText:{
+    subText: {
       textAlign: 'center',
       fontSize: '1.5rem',
       fontWeight: 300,
@@ -39,7 +39,7 @@ const Home = () => {
   useEffect(() => {
     if (currentTag && tagLinkRef.current) {
       tagLinkRef.current.click();
-    } 
+    }
   }, [currentTag]);
   const handleTabChange = (tab) => {
     dispatch(setTabs(tab));
@@ -54,7 +54,7 @@ const Home = () => {
   return (
     <Container>
       <div style={myStyles.banner}>
-        <h1 style={myStyles.logoFont}>Website for Testing with Cypress</h1>
+        <h1 style={myStyles.logoFont}>Website for Automated Testing with Cypress</h1>
         <p style={myStyles.subText}>A place where you can enhance your knowledge.</p>
       </div>
       <Row>
@@ -104,7 +104,7 @@ const Home = () => {
                       eventKey="tag"
                       onClick={() => handleTabChange("tag")}
                       ref={tagLinkRef}
-                      
+
                     >
                       {currentTag ? `#${currentTag}` : null}
                     </Nav.Link>
